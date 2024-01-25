@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovar</title>
+</head>
+<body>
+    <h1>Renovar Token</h1>
+
+    <button onclick="renew()">Renovar Token</button>
+
+    <script>
+        function renew() {
+            const refreshToken = localStorage.getItem('refreshToken');
+
+            fetch('http://127.0.0.1:8000/api/autenticacao/renovar/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    token_renewal: refreshToken,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Novo Access Token:', data.access);
+
+                // Atualizando o access token no localStorage
+                localStorage.setItem('accessToken', data.access);
+            })
+            .catch(error => console.error('Erro:', error));
+        }
+    </script>
+</body>
+</html>
