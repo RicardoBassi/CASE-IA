@@ -1,0 +1,34 @@
+{
+    "labels": [
+        "mouse"
+    ],
+    "amount_of_images": 64,
+    "image_color_mode": "color",
+    "image_size": "size_64",
+    "split": {
+        "train": 1056,
+        "val": 163,
+        "test": 500
+    },
+    "description": "All the images can be found in the data folder, the images are separated into train/test/val folders with a ratio of 60%/10%/30%",
+    "total_creation_time": "0:13:16.068901",
+    "augmentation": {
+        "active": true,
+        "augmentation_count": 741,
+        "augmentations": [
+            "rotate",
+            "blur"
+        ],
+        "description": "How to know which image has been augmented? Images with _aug suffix at the train folder"
+    },
+    "about": {
+        "provide_by": "www.images.cv",
+        "usefull_links": [
+            "images.cv/how-to-use",
+            "images.cv/faq",
+            "images.cv/computer-vision-dataset-categories",
+            "images.cv/computer-vision-image-datasets-index",
+            "images.cv/contact"
+        ]
+    }
+}
